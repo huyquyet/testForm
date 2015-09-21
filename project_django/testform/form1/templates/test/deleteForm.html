@@ -1,0 +1,9 @@
+{% extends 'base_test.html' %}
+{% block  content %}
+<form action="{% url 'form1:delete_form' delete_form.id %}" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{delete_form.first_name}}"?</p>
+    <input type="submit" value="Confirm" /><a href="{% url 'form1:detail_form' %}" style="text-decoration:none;" ><input type="button" value="Cancel"></a>
+</form>
+
+{% endblock %}

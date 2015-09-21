@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <title>{% block title %} Day la trang index {% endblock %}</title>
+</head>
+<body>
+<header>
+    <div class="login">
+        {% include 'user/login.html' %}
+    </div>
+    <div class="banner">
+        day la Banner
+    </div>
+</header>
+<nav>
+    <div class="menu">
+        <ul>
+            <li style="list-style : none; float : left;"><a href="{% url 'form1:create_form' %}" style="text-decoration:none;"> create</a></li>
+            <li style="list-style : none; float : left;"><a href="{% url 'form1:detail_form' %}" style="text-decoration:none;"> detail</a></li>
+            <li style="list-style : none; float : left;"><a href="#" style="text-decoration:none;"> menu_3</a></li>
+            <li style="list-style : none; float : left;"><a href="#" style="text-decoration:none;"> menu_4</a></li>
+            <li style="list-style : none; float : left;"><a href="#" style="text-decoration:none;"> menu_5</a></li>
+
+        </ul>
+    </div>
+</nav>
+<section style="display : block;">
+    {% block content %}
+
+    trang index hien tai ko co gi
+
+    {% endblock %}
+</section>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base_test.html' %}
+
+{% block content %}
+{% for i in form  %}
+<p><label>Ban ghi so {{i.id}}</label>
+<p><label>First name</label> <label> {{ i.first_name }}</label></p>
+<p><label>Last name</label> <label> {{ i.last_name }}</label></p>
+<p><label>Email</label> <label> {{ i.email }}</label></p>
+<p><label>Birthday</label> <label> {{ i.birthday }}</label></p>
+<p><label>Address</label> <label> {{ i.address }}</label></p>
+<p><label>Description</label> <label> {{ i.description }}</label></p>
+<a href="{% url 'form1:edit_form' i.id%}" style="text-decoration:none;"><input type="button" value="Edit"></a>
+<a href="{% url 'form1:delete_form' i.id%}" style="text-decoration:none;" ><input type="button" value="Delete"></a>
+{% endfor %}
+{% endblock %}
